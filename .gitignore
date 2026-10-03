@@ -1,0 +1,8 @@
+# Publish lecture notes and website assets only.
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.heic
+*.HEIC
+.DS_Store

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Non-Asymptotic Theory and High-Dimensional Statistics · Lecture Notes 01</title><link rel="stylesheet" href="assets/lecture.css"></head><body><div class="layout"><nav class="toc" aria-label="Contents"><span class="label">CONTENTS</span><a href="#finite-sample">01 · Non-Asymptotic Theory</a><a href="#high-dimension">02 · Why High Dimensions?</a><a href="#how-to-study">03 · How to Study</a></nav><main>
+<section id="finite-sample">
+<h2><span class="number">SECTION 01</span>Non-Asymptotic Theory</h2>
+<p><strong>Non-asymptotic theory</strong> studies estimation error at finite sample sizes.</p>
+<aside class="sidenote"><p>We randomly select 100 people and use their average height to estimate the citywide average. We want to study the error of this estimate. The challenge is that the sample is random, so the estimation error is also random: how can we account for this randomness and obtain a tight error bound?</p></aside>
+
+<h3>Asymptotic vs. Non-Asymptotic Analysis</h3>
+<ul>
+<li><strong>Asymptotic:</strong> Let the sample size n tend to infinity and study the estimation error in the limit. For example, the central limit theorem describes convergence of the distribution of a properly standardized sample mean to a normal distribution.<sup><a href="#fn-1" id="fnref-1" aria-label="Footnote 1">[1]</a></sup></li>
+<li><strong>Non-asymptotic:</strong> Fix the sample size n at a finite value and study the estimation error at that value. Specifically, (1) how large is the error? (2) With what probability does the error guarantee hold?<sup><a href="#fn-2" id="fnref-2" aria-label="Footnote 2">[2]</a></sup></li>
+</ul>
+<aside class="sidenote footnotes" aria-label="Footnote"><p id="fn-1"><a href="#fnref-1" aria-label="Back to footnote reference">[1]</a> The central limit theorem tells us that the distribution approaches a normal distribution as n increases, but does not itself quantify how close the approximation is at, say, n = 100.</p><p id="fn-2"><a href="#fnref-2" aria-label="Back to footnote reference">[2]</a> Beyond the limiting behavior studied above, a non-asymptotic error guarantee answers an additional question: with what probability does the bound hold at a finite sample size? Because samples are selected randomly, the estimation error is also random.</p></aside>
+
+
+<h3>Why It Matters</h3>
+<ol>
+<li>It is particularly useful in high-dimensional statistics, where we care about both the sample size n and the dimension d.</li>
+<li>Non-asymptotic does not mean small-sample: the bounds apply to finite n and can also be used to study behavior as n → ∞.</li>
+</ol>
+</section>
+<section id="high-dimension">
+<h2><span class="number">SECTION 02</span>Why Study Non-Asymptotic Theory in High-Dimensional Statistics?</h2>
+<p class="question">We study <strong>(1) non-asymptotic theory</strong> in <strong>(2) high-dimensional statistics</strong>.</p>
+<ul>
+<li>In modern science &amp; engineering, datasets are extremely large, often with the dimension of the same order or possibly even larger than the sample size.</li>
+<li>Classical asymptotic theory often fails to provide useful predictions, and standard methods may break down in dramatic ways.</li>
+</ul>
+<aside class="sidenote"><strong>Classical asymptotic theory</strong>Large n, fixed d.</aside>
+</section>
+<section id="how-to-study">
+<h2><span class="number">SECTION 03</span>How to Study</h2>
+<p>When learning a new concept, first understand what it describes, then why the related results hold, and finally how examples connect it to concrete problems.</p>
+<h3>1. Definition: What Does It Describe?</h3>
+<p>Do more than memorize the notation. Understand what mathematical object, property, or relationship the symbols describe. Ask why the definition takes this form: what is it intended to capture?</p>
+<h3>2. Proof: Why Does the Result Hold?</h3>
+<p>Once the definition is clear, study the proof. Follow the derivation, but also understand the underlying intuition or physical meaning: what principles does the result rely on? Which assumptions are used, and where do they enter the argument? This helps explain why the derivation works.</p>
+<h3>3. Examples: How Does It Explain a Concrete Problem?</h3>
+<p>Apply the definition and result to a concrete example. Identify what the abstract symbols represent, whether the assumptions of the proof are satisfied, and what the conclusion tells you. Use examples to connect the definitions and principles you have learned.</p>
+</section>
+</main></div></body></html>
