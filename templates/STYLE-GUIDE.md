@@ -26,3 +26,28 @@ Use `assets/lecture.css` for every lecture. Start with `templates/lecture.html` 
 ## Update workflow
 
 Edit and verify local files by default. Do not commit, push, or publish unless the user explicitly requests synchronization for that update.
+
+## Semantic colors
+
+Keep these mappings consistent across all notes:
+
+| Content | Class | Color |
+| --- | --- | --- |
+| Setting and goal | `topic-setting` | Blue, `#195cb5` |
+| Definitions | `topic-definition` | Teal, `#087b49` |
+| Proofs | `topic-proof` | Purple, `#883fb0` |
+| Examples | `topic-example` | Brown-orange, `#b45108` |
+
+Wrap content in `<div class="topic topic-proof">…</div>` (substitute the type).
+Color the heading and left rule; keep paragraphs in the common text color.
+Short examples retain the small-note layout: `<aside class="sidenote topic-example">…</aside>`.
+Always retain text labels: color is an additional cue, not the only distinction.
+
+## Theorems and proofs
+
+- Theorems use `topic topic-theorem` and proofs use `topic topic-proof`; both share the purple proof color.
+- Give the theorem a number and label its explanation “Proof of Theorem N” so the relationship is explicit.
+- Examples inside a proof retain the orange example color.
+- Put further explanations in nearby `.sidenote.footnotes` with linked reference numbers.
+- Connect consecutive lectures using `.page-navigation` at the end of each page.
+- When publishing a stylesheet change, update the shared CSS version query on both lecture pages to avoid stale browser caches.

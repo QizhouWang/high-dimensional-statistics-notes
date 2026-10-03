@@ -72,3 +72,28 @@ details:not([open])>*:not(summary){display:block}
 summary{list-style:none}
 .with-note{grid-template-columns:1fr 130px}
 }
+
+/* Reusable semantic colors: keep paragraph text in the shared text color. */
+:root {
+  --color-setting: #195cb5;
+  --color-definition: #087b49;
+  --color-proof: #883fb0;
+  --color-example: #b45108;
+}
+.topic-setting { --topic-color: var(--color-setting); }
+.topic-definition { --topic-color: var(--color-definition); }
+.topic-proof { --topic-color: var(--color-proof); }
+.topic-example { --topic-color: var(--color-example); }
+.topic { border-left: 3px solid var(--topic-color); padding-left: 18px; margin: 24px 0; }
+.topic h3 { color: var(--topic-color); margin-top: 0; }
+.topic-label { color: var(--topic-color); }
+.sidenote.topic-example { border-color: var(--color-example); }
+
+.topic-theorem { --topic-color: var(--color-proof); }
+.topic-theorem h3 { color: var(--color-proof); }
+.topic-proof .topic-example { margin: 22px 0; }
+.page-navigation { margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--line); }
+.page-navigation a { color: var(--accent); text-decoration: none; }
+.page-navigation a:hover { text-decoration: underline; }
+.footnotes .formula { background: transparent; font-size: 18px; padding: 12px 0; }
+math { font-family: 'STIX Two Math', 'Cambria Math', math; }

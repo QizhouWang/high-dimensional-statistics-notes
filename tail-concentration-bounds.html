@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Basic Tail and Concentration Bounds</title><link rel="stylesheet" href="assets/lecture.css?v=20261003-2"></head>
+<body><div class="layout"><nav class="toc" aria-label="Contents"><span class="label">CONTENTS</span><a href="#definitions">01 · Definitions</a><a href="#classical-bounds">02 · Classical Bounds</a><a href="#proof">Proof of Theorem 1</a><a href="#further">Further Explanation</a></nav><main>
+<section id="definitions"><h2><span class="number">SECTION 01</span>Basic Tail and Concentration Bounds</h2>
+<div class="topic topic-definition"><h3>Definition · Tail Probability</h3><p>A tail probability measures how likely a random variable is to take an extreme value, for example:</p>
+<div class="formula"><math display="block"><mrow><mrow><mi mathvariant="normal">P</mi><mo>(</mo><mrow><mi>X</mi><mo>≥</mo><mi>t</mi></mrow><mo>)</mo></mrow><mo>,</mo><mspace width="2em"/><mrow><mi mathvariant="normal">P</mi><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mo>−</mo><mi>t</mi></mrow><mo>)</mo></mrow></mrow></math></div>
+<p>A tail bound gives an upper bound on such a probability.</p></div>
+<div class="topic topic-definition"><h3>Definition · Concentration Inequality</h3><p>A concentration inequality bounds the probability that a random variable deviates from its mean or median. A two-sided bound around the mean takes the form:</p>
+<div class="formula"><math display="block"><mrow><mrow><mi mathvariant="normal">P</mi><mo>(</mo><mrow><mo>|</mo><mi>X</mi><mo>−</mo><mrow><mi mathvariant="double-struck">E</mi><mo>[</mo><mi>X</mi><mo>]</mo></mrow><mo>|</mo><mo>≥</mo><mi>t</mi></mrow><mo>)</mo></mrow><mo>≤</mo><mi>b</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow></math></div>
+<p>Here, t is the deviation threshold and b(t) bounds the probability of a deviation of at least t.</p></div></section>
+<section id="classical-bounds"><h2><span class="number">SECTION 02</span>Classical Bounds</h2>
+<div class="topic topic-setting"><h3>Setting and Goal</h3><p>Assume X ≥ 0, t &gt; 0, and k is a positive integer with a finite kth moment. We want to bound the tail probability P(X ≥ t).</p></div>
+<div class="topic topic-theorem" id="theorem-1"><h3>Theorem 1 · Controlling Tails through Moments</h3><p>One way to control a tail probability is by controlling the moments of the random variable.<sup><a href="#fn-1" id="fnref-1" aria-label="Footnote 1">[1]</a></sup> Controlling higher-order moments can give sharper tail bounds.<sup><a href="#fn-2" id="fnref-2" aria-label="Footnote 2">[2]</a></sup> Specifically,</p>
+<div class="formula"><math display="block"><mrow><mrow><mi mathvariant="normal">P</mi><mo>(</mo><mrow><mi>X</mi><mo>≥</mo><mi>t</mi></mrow><mo>)</mo></mrow><mo>≤</mo><mfrac><mrow><mi mathvariant="double-struck">E</mi><mo>[</mo><msup><mi>X</mi><mi>k</mi></msup><mo>]</mo></mrow><msup><mi>t</mi><mi>k</mi></msup></mfrac></mrow></math></div>
+</div>
+<div class="topic topic-proof" id="proof"><h3>Proof of Theorem 1</h3>
+<p>On the event X ≥ t, we have Xᵏ ≥ tᵏ. These outcomes therefore contribute at least tᵏ P(X ≥ t) to E[Xᵏ]. All other outcomes contribute a nonnegative amount.</p>
+<div class="topic topic-example"><h3>Example · Why This Contribution Is at Least tᵏ P(X ≥ t)</h3>
+<p>Imagine 100 observations, of which 10 satisfy X ≥ 5. Each of those 10 contributes at least 25 to the sum of squares, so their total contribution is at least 10 × 25 = 250. The other squares are nonnegative, so the average of all 100 squares is at least 250 / 100 = 2.5.</p>
+<p>This illustrates the same rule: minimum contribution × proportion of outcomes. Here it is 25 × 0.1 = 2.5.</p></div>
+<p>Applying this reasoning to the population expectation gives</p>
+<div class="formula"><math display="block"><mrow><mrow><mi mathvariant="double-struck">E</mi><mo>[</mo><msup><mi>X</mi><mi>k</mi></msup><mo>]</mo></mrow><mo>≥</mo><msup><mi>t</mi><mi>k</mi></msup><mrow><mi mathvariant="normal">P</mi><mo>(</mo><mrow><mi>X</mi><mo>≥</mo><mi>t</mi></mrow><mo>)</mo></mrow></mrow></math></div>
+<p>Dividing by tᵏ &gt; 0 proves Theorem 1:</p>
+<div class="formula"><math display="block"><mrow><mrow><mi mathvariant="normal">P</mi><mo>(</mo><mrow><mi>X</mi><mo>≥</mo><mi>t</mi></mrow><mo>)</mo></mrow><mo>≤</mo><mfrac><mrow><mi mathvariant="double-struck">E</mi><mo>[</mo><msup><mi>X</mi><mi>k</mi></msup><mo>]</mo></mrow><msup><mi>t</mi><mi>k</mi></msup></mfrac></mrow></math></div>
+<p>This inequality holds deterministically under the stated assumptions; it bounds the probability of a random event.</p></div>
+<aside class="sidenote footnotes" id="further" aria-label="Further explanation">
+<p id="fn-1"><a href="#fnref-1" aria-label="Back to footnote reference">[1]</a> “Controlling a moment” means knowing its value or an upper bound. If large values occur often, E[Xᵏ] must be large. Conversely, a small moment limits how often large values can occur.</p>
+<p id="fn-2"><a href="#fnref-2" aria-label="Back to footnote reference">[2]</a> Higher powers amplify extreme values more strongly, so controlling higher-order moments gives more information about the tail. But a larger k does not automatically give a tighter bound: both E[Xᵏ] and tᵏ change. Choose the smallest bound among the available orders. For a general real-valued X, use absolute moments:</p>
+<div class="formula"><math display="block"><mrow><mrow><mi mathvariant="normal">P</mi><mo>(</mo><mrow><mo>|</mo><mi>X</mi><mo>|</mo><mo>≥</mo><mi>t</mi></mrow><mo>)</mo></mrow><mo>≤</mo><munder><mo>inf</mo><mi>k</mi></munder><mfrac><mrow><mi mathvariant="double-struck">E</mi><mo>[</mo><msup><mrow><mo>|</mo><mi>X</mi><mo>|</mo></mrow><mi>k</mi></msup><mo>]</mo></mrow><msup><mi>t</mi><mi>k</mi></msup></mfrac></mrow></math></div>
+<p>The infimum is taken over positive integer orders with finite, known moments (or their available upper bounds).</p></aside>
+</section>
+<nav class="page-navigation" aria-label="Lecture navigation"><a href="非渐近理论与集中不等式.html">← Non-Asymptotic Theory and High-Dimensional Statistics</a></nav>
+</main></div></body></html>
