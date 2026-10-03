@@ -16,7 +16,7 @@
 <div class="formula"><math display="block"><mrow><mrow><mi mathvariant="normal">P</mi><mo>(</mo><mrow><mi>X</mi><mo>≥</mo><mi>t</mi></mrow><mo>)</mo></mrow><mo>≤</mo><mfrac><mrow><mi mathvariant="double-struck">E</mi><mo>[</mo><msup><mi>X</mi><mi>k</mi></msup><mo>]</mo></mrow><msup><mi>t</mi><mi>k</mi></msup></mfrac></mrow></math></div>
 </div>
 <div class="topic topic-proof" id="proof"><h3>Proof of Theorem 1</h3>
-<p>On the event X ≥ t, we have Xᵏ ≥ tᵏ. These outcomes therefore contribute at least tᵏ P(X ≥ t) to E[Xᵏ]. All other outcomes contribute a nonnegative amount.</p>
+<p>If X ≥ t always holds, then Xᵏ ≥ tᵏ always holds, so E[Xᵏ] ≥ tᵏ. More generally, if X ≥ t holds with probability P(X ≥ t), then E[Xᵏ] ≥ tᵏ P(X ≥ t), because Xᵏ is at least tᵏ in those outcomes and is nonnegative in all other outcomes.</p>
 <div class="topic topic-example"><h3>Example · Why This Contribution Is at Least tᵏ P(X ≥ t)</h3>
 <p>Imagine 100 observations, of which 10 satisfy X ≥ 5. Each of those 10 contributes at least 25 to the sum of squares, so their total contribution is at least 10 × 25 = 250. The other squares are nonnegative, so the average of all 100 squares is at least 250 / 100 = 2.5.</p>
 <p>This illustrates the same rule: minimum contribution × proportion of outcomes. Here it is 25 × 0.1 = 2.5.</p></div>
