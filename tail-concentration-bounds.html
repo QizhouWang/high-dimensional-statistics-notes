@@ -2,6 +2,8 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Basic Tail and Concentration Bounds</title><link rel="stylesheet" href="assets/lecture.css?v=20261003-2"></head>
 <body><div class="layout"><nav class="toc" aria-label="Contents"><span class="label">CONTENTS</span><a href="#definitions">01 · Definitions</a><a href="#classical-bounds">02 · Classical Bounds</a><a href="#proof">Proof of Theorem 1</a><a href="#further">Further Explanation</a></nav><main>
 <section id="definitions"><h2><span class="number">SECTION 01</span>Basic Tail and Concentration Bounds</h2>
+<p>In this chapter, we study how to bound the probability that a random variable takes an extreme value or deviates far from its mean.</p>
+<aside class="sidenote topic-example"><p>For example, we use the average height of 100 randomly selected people to estimate the citywide average. We want to know how likely this estimate is to differ from the true average by more than 2 cm. Tail and concentration bounds help us control this probability.</p></aside>
 <div class="topic topic-definition"><h3>Definition · Tail Probability</h3><p>A tail probability measures how likely a random variable is to take an extreme value, for example:</p>
 <div class="formula"><math display="block"><mrow><mrow><mi mathvariant="normal">P</mi><mo>(</mo><mrow><mi>X</mi><mo>≥</mo><mi>t</mi></mrow><mo>)</mo></mrow><mo>,</mo><mspace width="2em"/><mrow><mi mathvariant="normal">P</mi><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mo>−</mo><mi>t</mi></mrow><mo>)</mo></mrow></mrow></math></div>
 <p>A tail bound gives an upper bound on such a probability.</p></div>
@@ -23,6 +25,12 @@
 <p>Dividing by tᵏ &gt; 0 proves Theorem 1:</p>
 <div class="formula"><math display="block"><mrow><mrow><mi mathvariant="normal">P</mi><mo>(</mo><mrow><mi>X</mi><mo>≥</mo><mi>t</mi></mrow><mo>)</mo></mrow><mo>≤</mo><mfrac><mrow><mi mathvariant="double-struck">E</mi><mo>[</mo><msup><mi>X</mi><mi>k</mi></msup><mo>]</mo></mrow><msup><mi>t</mi><mi>k</mi></msup></mfrac></mrow></math></div>
 <p>This inequality holds deterministically under the stated assumptions; it bounds the probability of a random event.</p></div>
+<div class="topic topic-example"><h3>Example · k = 2: Variance Controls Deviations</h3>
+<p>The second moment E[X²] equals the variance only when E[X] = 0. For a general X, the variance is E[(X − E[X])²]: the average squared deviation from the mean.</p>
+<p>Apply Theorem 1 to the nonnegative variable |X − E[X]| with k = 2. This gives Chebyshev’s inequality:</p>
+<div class="formula"><math display="block"><mrow><mi mathvariant="normal">P</mi><mo>(</mo><mo>|</mo><mi>X</mi><mo>−</mo><mi mathvariant="double-struck">E</mi><mo>[</mo><mi>X</mi><mo>]</mo><mo>|</mo><mo>≥</mo><mi>t</mi><mo>)</mo><mo>≤</mo><mfrac><mrow><mi mathvariant="normal">Var</mi><mo>(</mo><mi>X</mi><mo>)</mo></mrow><msup><mi>t</mi><mn>2</mn></msup></mfrac></mrow></math></div>
+<p>For example, if an estimate has variance 1 cm², its probability of differing from its mean by at least 2 cm is at most 1 / 2² = 25%. A smaller variance gives a smaller bound at the same threshold.</p>
+</div>
 <aside class="sidenote footnotes" id="further" aria-label="Further explanation">
 <p id="fn-1"><a href="#fnref-1" aria-label="Back to footnote reference">[1]</a> “Controlling a moment” means knowing its value or an upper bound. If large values occur often, E[Xᵏ] must be large. Conversely, a small moment limits how often large values can occur.</p>
 <p id="fn-2"><a href="#fnref-2" aria-label="Back to footnote reference">[2]</a> Higher powers amplify extreme values more strongly, so controlling higher-order moments gives more information about the tail. But a larger k does not automatically give a tighter bound: both E[Xᵏ] and tᵏ change. Choose the smallest bound among the available orders. For a general real-valued X, use absolute moments:</p>

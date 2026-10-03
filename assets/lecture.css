@@ -75,10 +75,10 @@ summary{list-style:none}
 
 /* Reusable semantic colors: keep paragraph text in the shared text color. */
 :root {
-  --color-setting: #195cb5;
-  --color-definition: #087b49;
-  --color-proof: #883fb0;
-  --color-example: #b45108;
+  --color-setting: #202020;
+  --color-definition: #174a82;
+  --color-proof: #a3470b;
+  --color-example: #32834a;
 }
 .topic-setting { --topic-color: var(--color-setting); }
 .topic-definition { --topic-color: var(--color-definition); }
