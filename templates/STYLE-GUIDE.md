@@ -51,3 +51,7 @@ Always retain text labels: color is an additional cue, not the only distinction.
 - Put further explanations in nearby `.sidenote.footnotes` with linked reference numbers.
 - Connect consecutive lectures using `.page-navigation` at the end of each page.
 - When publishing a stylesheet change, update the shared CSS version query on both lecture pages to avoid stale browser caches.
+
+## Supplementary material
+
+Use a separate `<section class="supplementary">` labeled SUPPLEMENTARY and a `.supplementary-link` in the contents. Retain the shared setting, definition, theorem/proof, and example colors within it.

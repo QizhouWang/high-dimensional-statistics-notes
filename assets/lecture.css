@@ -97,3 +97,8 @@ summary{list-style:none}
 .page-navigation a:hover { text-decoration: underline; }
 .footnotes .formula { background: transparent; font-size: 18px; padding: 12px 0; }
 math { font-family: 'STIX Two Math', 'Cambria Math', math; }
+
+/* Separate supplementary material while retaining semantic topic colors. */
+section.supplementary { border-top: 3px double var(--line); margin-top: 60px; padding-top: 40px; }
+.toc .supplementary-link { margin-top: 24px; border-top: 2px solid var(--line); }
+.page-navigation { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px 24px; }
