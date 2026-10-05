@@ -102,3 +102,27 @@ math { font-family: 'STIX Two Math', 'Cambria Math', math; }
 section.supplementary { border-top: 3px double var(--line); margin-top: 60px; padding-top: 40px; }
 .toc .supplementary-link { margin-top: 24px; border-top: 2px solid var(--line); }
 .page-navigation { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px 24px; }
+
+/* Shared sidebar: navigate between lectures and within the current page. */
+.toc { max-height: calc(100vh - 64px); overflow-y: auto; }
+.toc-group + .toc-group { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
+.toc .label { display: block; margin-bottom: 10px; }
+.toc .lecture-link { display: flex; align-items: baseline; gap: 10px; border: 0; border-radius: 6px; padding: 10px 8px; line-height: 1.5; }
+.lecture-number { flex: 0 0 20px; font-size: 12px; color: var(--muted); }
+.toc .lecture-link[aria-current="page"] { background: #e6eeeb; color: var(--accent); font-weight: var(--weight-bold); }
+.toc .lecture-link:hover { background: #edf2ef; }
+.toc-local a { padding: 9px 8px; line-height: 1.55; }
+.toc .toc-subsection { padding-left: 20px; font-size: 13px; border-bottom: 0; }
+.toc .supplementary-link { margin-top: 12px; }
+@media(max-width:950px) {
+  .toc { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-height: none; overflow: visible; }
+  .toc-group + .toc-group { margin: 0; padding: 0; border: 0; }
+}
+@media(max-width:600px) {
+  .toc { grid-template-columns: 1fr; gap: 16px; }
+  .toc-local { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+  .toc-local .label { width: 100%; margin: 0; }
+  .toc-local a { border: 0; padding: 4px 0; }
+  .toc .toc-subsection { padding-left: 0; }
+  .toc .supplementary-link { margin-top: 0; border: 0; }
+}

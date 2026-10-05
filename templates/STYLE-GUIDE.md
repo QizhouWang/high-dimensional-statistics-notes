@@ -55,3 +55,7 @@ Always retain text labels: color is an additional cue, not the only distinction.
 ## Supplementary material
 
 Use a separate `<section class="supplementary">` labeled SUPPLEMENTARY and a `.supplementary-link` in the contents. Retain the shared setting, definition, theorem/proof, and example colors within it.
+
+## Sidebar navigation
+
+Every lecture uses two `.toc-group` blocks: LECTURE NOTES links to all lectures, with `aria-current="page"` on the current lecture; ON THIS PAGE links to local section anchors. Use `.toc-subsection` for subordinate links. Update the lecture list on every page when adding a lecture. Keep this navigation available in local files without requiring JavaScript.
