@@ -9,7 +9,9 @@
 <p>A tail bound gives an upper bound on such a probability.</p></div>
 <div class="topic topic-definition"><h3>Definition · Concentration Inequality</h3><p>A concentration inequality bounds the probability that a random variable deviates from its mean or median. A two-sided bound around the mean takes the form:</p>
 <div class="formula"><math display="block"><mrow><mrow><mi mathvariant="normal">P</mi><mo>(</mo><mrow><mo>|</mo><mi>X</mi><mo>−</mo><mrow><mi mathvariant="double-struck">E</mi><mo>[</mo><mi>X</mi><mo>]</mo></mrow><mo>|</mo><mo>≥</mo><mi>t</mi></mrow><mo>)</mo></mrow><mo>≤</mo><mi>b</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow></math></div>
-<p>Here, t is the deviation threshold and b(t) bounds the probability of a deviation of at least t.</p></div></section>
+<p>Here, t is the deviation threshold and b(t) bounds the probability of a deviation of at least t.</p>
+</div>
+<aside class="sidenote footnotes" aria-label="Tightness of bounds"><p>For both tail bounds and concentration bounds, we usually ask how tight a bound is: an upper bound closer to the true probability is more informative. For example, saying that a probability is at most 1 is correct but gives no additional information. We therefore often pursue two goals: (1) derive general bounds under minimal assumptions; and (2) use additional information about the random variable to obtain tighter bounds.</p></aside></section>
 <section id="classical-bounds"><h2><span class="number">SECTION 02</span>Classical Bounds</h2>
 <div class="topic topic-setting"><h3>Setting and Goal</h3><p>Assume X ≥ 0, t &gt; 0, and k is a positive integer with a finite kth moment. We want to bound the tail probability P(X ≥ t).</p></div>
 <div class="topic topic-theorem" id="claim-1"><h3>Claim 1 · Controlling Tails through Moments</h3><p>One way to control a tail probability is by controlling the moments of the random variable.<sup><a href="#fn-1" id="fnref-1" aria-label="Footnote 1">[1]</a></sup> Controlling higher-order moments can give sharper tail bounds.<sup><a href="#fn-2" id="fnref-2" aria-label="Footnote 2">[2]</a></sup> Specifically,</p>
